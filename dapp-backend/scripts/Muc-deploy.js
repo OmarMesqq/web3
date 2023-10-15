@@ -6,7 +6,7 @@ async function main() {
   const Muc = await hre.ethers.getContractFactory("Muc");
   const muc = await Muc.deploy();
   await muc.waitForDeployment();
-  console.log("Muc deployed to:", muc.target);
+  console.log("Muc deployed to address:", muc.target);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
