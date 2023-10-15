@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
-describe("Muc NFT", function() {
+describe("Muc NFT tests", function() {
   it("Should mint a new token", async function() {
     const Muc = await ethers.getContractFactory("Muc");
     const muc = await Muc.deploy();
