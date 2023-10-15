@@ -11,12 +11,17 @@ npm i
 npx hardhat compile
 ```
 
-3 - Start a local Ethereum network: 
+3 - In a different terminal, start a local Ethereum network: 
 ```bash
 npx ganache-cli
 ```
 
-4 - Deploy the contract to the local network: 
+4 - Test the contract: 
+```bash
+npx hardhat test --network localhost
+```
+
+5 - Deploy the contract to the local network: 
 ```bash
 npx hardhat run scripts/deploy.js --network localhost
 ```
