@@ -5,11 +5,11 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
 // Inherits from the ERC-721 standard
-contract Mucc is ERC721URIStorage {
+contract Muc is ERC721URIStorage {
     uint256 private _tokenIds;
 
     // Called once the contract is deployed
-    constructor() ERC721("Mucc", "MUC") {}
+    constructor() ERC721("Muc", "MUC") {}
 
     event TokenMinted(uint256 tokenId);
 

@@ -2,11 +2,11 @@
 const hre = require("hardhat");
 
 async function main() {
-  // Get, deploy and wait for Muccoin contract to be deployed
-  const Muccoin = await hre.ethers.getContractFactory("Muccoin");
-  const muccoin = await Muccoin.deploy();
-  await muccoin.waitForDeployment();
-  console.log("Muccoin deployed to:", muccoin.target);
+  // Get, deploy and wait for Muc contract to be deployed
+  const Muc = await hre.ethers.getContractFactory("Muc");
+  const muc = await Muc.deploy();
+  await muc.waitForDeployment();
+  console.log("Muccoin deployed to:", muc.target);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
