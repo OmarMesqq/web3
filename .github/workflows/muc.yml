@@ -1,0 +1,40 @@
+name: Muc NFT smart contract tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Git checkout 
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
+    - name: Install project dependencies
+      run: |
+        cd dapp-backend
+        npm install
+
+    - name: Start Ganache (local Ethereum blockchain)
+      run: |
+        npx ganache-cli --deterministic &
+        sleep 5 
+
+    - name: Compile the contracts
+      run: |
+        cd dapp-backend
+        npx hardhat compile
+    
+    - name: Run the tests
+      run: |
+        cd dapp-backend
+        npx hardhat test --network localhost
