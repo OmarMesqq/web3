@@ -5,15 +5,15 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
 // Inherits from the ERC-721 standard
-contract Muccoin is ERC721URIStorage {
+contract Mucc is ERC721URIStorage {
     uint256 private _tokenIds;
 
     // Called once the contract is deployed
-    constructor() ERC721("Muccoin", "MUC") {}
+    constructor() ERC721("Mucc", "MUC") {}
 
     event TokenMinted(uint256 tokenId);
 
-    function mintToken(address recipient, string memory tokenURI) public {
+    function mintNFT(address recipient, string memory tokenURI) public {
         _tokenIds++;
         uint256 newItemId = _tokenIds;
         _mint(recipient, newItemId); // creates a new token and assigns its ownership

@@ -1,16 +1,16 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
-describe("Muccoin", function() {
+describe("Mucc NFT", function() {
   it("Should mint a new token", async function() {
-    const Muccoin = await ethers.getContractFactory("Muccoin");
+    const Muccoin = await ethers.getContractFactory("Mucc");
     const muccoin = await Muccoin.deploy();
     await muccoin.waitForDeployment();
 
     // Random mocked address
     const checksummedAddress = ethers.getAddress("XE65GB6LDNXYOFTX0NSV3FUWKOWIXAMJK36");    
 
-    const transactionResponse = await muccoin.mintToken(checksummedAddress, "local.host/my-uri");
+    const transactionResponse = await muccoin.mintNFT(checksummedAddress, "local.host/my-uri");
     const transactionReceipt = await transactionResponse.wait();
     expect(transactionReceipt).to.emit(muccoin, 'TokenMinted').withArgs(1);
 
