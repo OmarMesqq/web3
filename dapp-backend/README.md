@@ -1,4 +1,4 @@
-### Deploy instructions:
+## Deploying the NFT contract:
 
 1 - Install dependencies:
 
@@ -23,10 +23,8 @@ npx hardhat test --network localhost
 
 5 - Deploy the contract to the local network: 
 ```bash
-npx hardhat run scripts/deploy.js --network localhost
+npx hardhat run scripts/Muc-deploy.js --network localhost
 ```
-
-
 
 ### References:
 
