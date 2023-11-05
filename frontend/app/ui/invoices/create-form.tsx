@@ -140,6 +140,16 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
         </fieldset>
       </div>
 
+      {state.message ? (
+        <div
+          id="customer-error"
+          aria-live="polite"
+          className="mt-2 text-sm text-red-500"
+        >
+          <p>{state.message}</p>
+        </div>
+      ) : null}
+
       <div className="mt-6 flex justify-end gap-4">
         <Link
           href="/dashboard/invoices"
